@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Threat Dashboard</title>
+</head>
+<body>
+    <h2>Anomaly Detection Results</h2>
+    <table border="1">
+        <tr><th>Hour</th><th>Failed Logins</th><th>Anomaly</th></tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.hour }}</td>
+            <td>{{ row.login_fail }}</td>
+            <td>{{ 'Yes' if row.anomaly == -1 else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
